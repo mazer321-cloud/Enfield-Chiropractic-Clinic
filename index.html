@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enfield Chiropractic Clinic | Chiropractors in Winchmore Hill</title>
+  <meta name="description" content="Enfield Chiropractic Clinic provides chiropractic care, cranial therapy and supportive treatments in Winchmore Hill, Enfield. Book an appointment today." />
+
+  <style>
+    :root {
+      --ink: #2a2438;
+      --muted: #6f687d;
+      --brand: #7c5cff;
+      --brand-dark: #5d3fe0;
+      --brand-soft: #efe9ff;
+      --cream: #f6f4fb;
+      --white: #ffffff;
+      --line: #e5dff2;
+      --shadow: 0 18px 45px rgba(20, 39, 47, 0.08);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    p { margin: 0; color: var(--muted); }
+    h1, h2, h3 { margin: 0; line-height: 1.08; letter-spacing: -0.04em; }
+    h1 { font-size: clamp(2rem, 4.2vw, 3.8rem); }
+    h2 { font-size: clamp(1.7rem, 3vw, 2.6rem); }
+    h3 { font-size: 1.25rem; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .equal-height-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .equal-height-grid > .card {
+      margin-top: 0 !important;
+    }
+
+    .topbar {
+      background: var(--ink);
+      color: #eefaf8;
+      font-size: 0.9rem;
+      padding: 10px 0;
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(246, 244, 251, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+      color: var(--ink);
+    }
+
+    .logo-mark {
+      width: 82px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      align-items: center;
+      padding: 5px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      box-shadow: 0 8px 22px rgba(20, 39, 47, 0.04);
+    }
+
+    .nav-links a {
+      padding: 9px 11px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.93rem;
+      font-weight: 750;
+    }
+
+    .nav-links a {
+      transition: all 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 19px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 850;
+      box-shadow: 0 12px 24px rgba(124, 92, 255, 0.24);
+      cursor: pointer;
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 18px 34px rgba(124, 92, 255, 0.34);
+    }
+    .btn.secondary { background: #fff; color: var(--brand-dark); border: 1px solid var(--line); box-shadow: none; }
+
+    main { min-height: 70vh; }
+
+    .page { display: none; }
+    .page.active { display: block; }
+
+    .page-hero {
+      padding: 38px 0 22px;
+      background:
+        radial-gradient(circle at 85% 5%, rgba(168, 141, 255, 0.22), transparent 34%),
+        linear-gradient(180deg, #fff 0%, var(--cream) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 54px;
+      align-items: stretch;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      font-size: 0.88rem;
+      font-weight: 850;
+    }
+
+    .lead {
+      max-width: 670px;
+      margin: 16px 0 22px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      height: 100%;
+      display: flex;
+    }
+
+    .hero-image {
+      transition: transform 0.5s ease;
+      min-height: 430px;
+      border-radius: 24px;
+      background:
+        linear-gradient(rgba(20, 39, 47, 0.08), rgba(20, 39, 47, 0.2)),
+        url("https://images.unsplash.com/photo-1539815208687-a0f05e15d601?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center/cover;
+      display: flex;
+      align-items: end;
+      padding: 18px;
+    }
+
+    .hero-card:hover .hero-image {
+      transform: scale(1.03);
+    }
+
+    .image-note {
+      width: 100%;
+      padding: 17px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+    }
+
+    .image-note strong { display: block; margin-bottom: 4px; }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 0;
+    }
+
+    .home-trust {
+      padding: 0 0 26px;
+      margin-top: -18px;
+    }
+
+    .trust-item {
+      transition: transform 0.25s ease, border-color 0.25s ease;
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      font-weight: 850;
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    .trust-item:hover {
+      transform: translateY(-4px);
+      border-color: #d7cbff;
+    }
+
+    .trust-item span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .home-about {
+      padding: 26px 0 78px;
+    }
+
+    .home-about-panel {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 40px;
+      align-items: start;
+      padding: 42px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .home-about-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 7px;
+      background: linear-gradient(180deg, #8f73ff, #c8b8ff);
+    }
+
+    .home-about-copy p + p {
+      margin-top: 14px;
+    }
+
+    .home-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .home-feature {
+      min-height: 205px;
+      padding: 24px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8f6fc 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 12px 28px rgba(42, 36, 56, 0.055);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .home-feature:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 34px rgba(42, 36, 56, 0.08);
+    }
+
+    .home-feature .icon {
+      width: 38px;
+      height: 38px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      font-size: 0.86rem;
+    }
+
+    .home-feature h3 {
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    .home-feature p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .tick-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 18px;
+      max-width: 640px;
+    }
+
+    .tick-item {
+      transition: transform 0.22s ease, background 0.22s ease;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 12px;
+      background: rgba(255,255,255,0.84);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      min-height: 46px;
+    }
+
+    .tick-item:hover {
+      transform: translateY(-2px);
+      background: #ffffff;
+    }
+
+    .tick-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #86d39b;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+
+    .tick-item p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 0.86rem;
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    section.content {
+      padding: 28px 0 82px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .section-intro {
+      position: sticky;
+      top: 104px;
+      padding: 30px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .section-intro p { margin-top: 16px; }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 10px 28px rgba(20, 39, 47, 0.045);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(42,36,56,0.1);
+      border-color: #d5c7ff;
+    }
+
+    .card + .card { margin-top: 18px; }
+    .card h3 { margin-bottom: 10px; }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+    .feature-card {
+      min-height: 176px;
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .pill-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .pill {
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #faf8ff 100%);
+      font-weight: 850;
+      box-shadow: 0 10px 24px rgba(42, 36, 56, 0.045);
+    }
+
+    .pill::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 6px var(--brand-soft);
+      flex-shrink: 0;
+    }
+
+    .conditions-panel {
+      padding: 42px;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(168, 141, 255, 0.24), transparent 34%),
+        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(248,246,252,0.96));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .conditions-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 7px;
+      background: linear-gradient(180deg, #8f73ff, #c8b8ff);
+    }
+
+    .conditions-header {
+      max-width: 760px;
+      margin-bottom: 28px;
+      padding-left: 8px;
+    }
+
+    .conditions-note {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      margin-top: 28px;
+      padding: 22px;
+      border-radius: 22px;
+      background: var(--brand-soft);
+      border: 1px solid #ddd2ff;
+    }
+
+    .pill:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(42,36,56,0.08);
+    }
+
+    .conditions-note p {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .price-list, .hours-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      flex: 1;
+      height: 100%;
+    }
+
+    .equal-card {
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      height: 100%;
+      min-height: 640px;
+    }
+
+    .price-row, .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+      flex: 1;
+    }
+
+    .price-row:last-child, .hours-row:last-child { border-bottom: 0; }
+    .price-row strong, .hours-row strong { color: var(--ink); }
+    .price-row span:last-child { font-weight: 900; color: var(--brand-dark); }
+
+    .contact-panel {
+      background: linear-gradient(135deg, #8f73ff, #5d3fe0);
+      color: #fff;
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-panel p { color: #dbf6f1; }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 14px 15px;
+      background: #fbfdfc;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    footer {
+      padding: 42px 0;
+      background: var(--ink);
+      color: #fff;
+    }
+
+    footer p { color: #bfd2d6; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr 0.7fr;
+      gap: 26px;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .hero-grid, .content-grid, .grid-2, .grid-3, .footer-grid, .home-about-panel, .equal-height-grid { grid-template-columns: 1fr; }
+      .section-intro { position: static; }
+      .trust-row { grid-template-columns: repeat(2, 1fr); }
+      .home-feature-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 1120px); }
+      .page-hero { padding: 48px 0 32px; }
+      .hero-image { min-height: 320px; }
+      .trust-row, .pill-grid, .form-row, .tick-list { grid-template-columns: 1fr; }
+      .topbar .container { display: grid; }
+      .logo span:last-child { white-space: normal; font-size: 0.98rem; line-height: 1.1; }
+      .btn { width: 100%; }
+      nav { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>94 Ridge Avenue, Winchmore Hill, London N21 2AU</span>
+      <span><a href="tel:02083600204">020 8360 0204</a> · <a href="mailto:info@enfield-chiro.co.uk">info@enfield-chiro.co.uk</a></span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <a class="logo" href="#home" data-page-link="home" aria-label="Enfield Chiropractic Clinic home">
+          <img class="logo-mark" src="https://i.postimg.cc/sg2PBZMK/Untitled-design-(32).png" alt="Enfield Chiropractic Clinic logo" />
+          <span>Enfield Chiropractic Clinic</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#home" data-page-link="home">Home</a>
+          <a href="#what-is-chiropractic" data-page-link="what-is-chiropractic">What is Chiropractic?</a>
+          <a href="#conditions" data-page-link="conditions">Conditions</a>
+          <a href="#first-visit" data-page-link="first-visit">First Visit</a>
+          <a href="#team" data-page-link="team">Team</a>
+          <a href="#prices" data-page-link="prices">Prices</a>
+          <a href="#contact" data-page-link="contact">Contact</a>
+        </div>
+
+        <a class="btn" href="#contact" data-page-link="contact">Book now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article id="home" class="page active">
+      <section class="page-hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">Established in Winchmore Hill since 1990</div>
+            <h1>Chiropractic care for better movement, comfort and everyday health.</h1>
+            <p class="lead">Enfield Chiropractic Clinic provides spine and joint healthcare in a calm, friendly setting, helping patients improve symptoms, restore function and feel more confident in daily life.</p>
+            <div class="hero-actions">
+              <a class="btn" href="#contact" data-page-link="contact">Request an appointment</a>
+              <a class="btn secondary" href="tel:02083600204">Call 020 8360 0204</a>
+            </div>
+
+            <div class="tick-list">
+              <div class="tick-item">
+                <div class="tick-icon">✓</div>
+                <p>Improve your condition faster</p>
+              </div>
+              <div class="tick-item">
+                <div class="tick-icon">✓</div>
+                <p>Reduce re-occurrence</p>
+              </div>
+              <div class="tick-item">
+                <div class="tick-icon">✓</div>
+                <p>Support your wellbeing</p>
+              </div>
+              <div class="tick-item">
+                <div class="tick-icon">✓</div>
+                <p>Lifestyle & posture advice</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-image" role="img" aria-label="A calm healthcare treatment room">
+              <div class="image-note">
+                <strong>Friendly care for you and your family</strong>
+                <p>Support for back pain, neck pain, sciatica, posture, sports injuries and prevention.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <section class="home-about">
+        <div class="container home-about-panel">
+          <div>
+            <div class="eyebrow">About the clinic</div>
+            <h2>A warm, established clinic in Winchmore Hill.</h2>
+          </div>
+
+          <div class="home-about-copy">
+            <p>The Enfield Chiropractic Clinic has been established at its current location since 1990. Our chiropractors not only help with your symptoms, but also work to restore the function of your body.</p>
+            <p>Restoring spine and joint health supports the nervous system, often referred to as the master system of the body, helping you feel stronger, healthier and more balanced overall.</p>
+            <p>Our aim is to provide every patient with a warm welcome, excellent service and a comfortable, friendly atmosphere from the moment they arrive.</p>
+
+            <div class="home-feature-grid">
+              <article class="home-feature">
+                <div class="icon">01</div>
+                <h3>Improve symptoms</h3>
+                <p>Tailored support for spine and joint concerns.</p>
+              </article>
+              <article class="home-feature">
+                <div class="icon">02</div>
+                <h3>Restore function</h3>
+                <p>Care focused on movement, comfort and confidence.</p>
+              </article>
+              <article class="home-feature">
+                <div class="icon">03</div>
+                <h3>Prevent recurrence</h3>
+                <p>Practical advice to help problems stay away.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article id="what-is-chiropractic" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="eyebrow">Understanding chiropractic care</div>
+          <h1>What is chiropractic?</h1>
+          <p class="lead">Chiropractic is a hands-on healthcare profession focused on the relationship between the musculoskeletal system, the nervous system and overall wellbeing.</p>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="container">
+          <div class="card" style="padding: 42px; border-radius: 32px; overflow: hidden; position: relative; background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(248,246,252,0.96) 100%);">
+            <div style="position: absolute; inset: 0 auto 0 0; width: 7px; background: linear-gradient(180deg, #8f73ff, #c8b8ff);"></div>
+
+            <div style="max-width: 860px; margin: 0 auto;">
+              <div class="eyebrow">A natural approach to health</div>
+
+              <h2 style="margin-bottom: 20px;">Hands-on healthcare focused on movement, function and wellbeing.</h2>
+
+              <p style="font-size: 1.05rem; line-height: 1.8;">Chiropractic comes from two Greek words which translate to “done by hand”. In essence, it describes a healthcare profession based on analysing the musculoskeletal and nervous systems, with treatment carried out using hands-on techniques.</p>
+
+              <div style="height: 1px; background: var(--line); margin: 32px 0;"></div>
+
+              <div class="grid-2" style="gap: 20px; align-items: stretch;">
+                <div>
+                  <h3 style="margin-bottom: 12px;">How chiropractic works</h3>
+                  <p>Chiropractic is a primary healthcare profession that specialises in the diagnosis, treatment and management of conditions involving joints, ligaments, tendons and nerves, particularly those relating to the spine.</p>
+
+                  <p style="margin-top: 16px;">Treatment uses a range of manipulative techniques designed to improve joint function, reduce pain and relieve muscle tension, helping your nervous system work the way it should.</p>
+                </div>
+
+                <div>
+                  <h3 style="margin-bottom: 12px;">Supporting the nervous system</h3>
+                  <p>Your brain, spinal cord and nerves control every aspect of your body. Proper function within these structures can support better movement, resilience and overall health.</p>
+
+                  <p style="margin-top: 16px;">The intent of chiropractic is to restore the body’s natural ability to regulate and heal itself, without drugs or surgery.</p>
+                </div>
+              </div>
+
+              <div style="height: 1px; background: var(--line); margin: 32px 0;"></div>
+
+              <div class="grid-2" style="gap: 20px; align-items: start;">
+                <div class="tick-item" style="padding: 18px 20px; border-radius: 18px; background: white;">
+                  <div class="tick-icon">✓</div>
+                  <p style="font-size: 0.96rem; line-height: 1.6;">Chiropractic is simple, natural and centred around the wisdom of the body. It has helped millions of people enjoy relief and better health for more than a century.</p>
+                </div>
+
+                <div class="tick-item" style="padding: 18px 20px; border-radius: 18px; background: white;">
+                  <div class="tick-icon">✓</div>
+                  <p style="font-size: 0.96rem; line-height: 1.6;">The General Chiropractic Council (GCC) regulates chiropractors in the UK under the Chiropractors Act 1994, helping ensure professional standards and patient safety.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article id="conditions" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="eyebrow">Conditions treated</div>
+          <h1>Support for spine, joint and movement concerns.</h1>
+          <p class="lead">Whether symptoms are new, recurring or quietly stealing the joy from your day, the clinic supports a wide range of concerns.</p>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="container">
+          <div class="conditions-panel">
+            <div class="conditions-header">
+              <div class="eyebrow">Common reasons patients visit</div>
+              <h2>Care for everyday pain, stiffness and movement issues.</h2>
+              <p style="margin-top: 16px;">From back pain to sports injuries, the clinic can help assess what may be causing your symptoms and advise on the most suitable next step.</p>
+            </div>
+
+            <div class="pill-grid">
+              <div class="pill">Low back pain</div>
+              <div class="pill">Neck pain</div>
+              <div class="pill">Sciatica</div>
+              <div class="pill">Headaches & migraines</div>
+              <div class="pill">Shoulder pain</div>
+              <div class="pill">Sports injuries</div>
+              <div class="pill">Pregnancy chiropractic</div>
+              <div class="pill">Children</div>
+              <div class="pill">Dizziness from neck</div>
+              <div class="pill">Knee & hip pain</div>
+            </div>
+
+            <div class="conditions-note">
+              <p>Unsure whether chiropractic care is suitable for your symptoms? The team can advise you on the right next step.</p>
+              <a class="btn" href="#contact" data-page-link="contact">Ask the clinic</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article id="first-visit" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="eyebrow">What to expect</div>
+          <h1>Your first visit, without the fog.</h1>
+          <p class="lead">A good appointment should feel clear, considered and unrushed. Here is the simple version of the journey.</p>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="container">
+          <div class="card" style="padding: 42px; border-radius: 32px; overflow: hidden; position: relative; background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(248,246,252,0.96) 100%);">
+            <div style="position: absolute; inset: 0 auto 0 0; width: 7px; background: linear-gradient(180deg, #8f73ff, #c8b8ff);"></div>
+
+            <div style="max-width: 920px; margin: 0 auto;">
+              <div class="eyebrow">What to expect</div>
+              <h2 style="margin-bottom: 18px;">A detailed consultation focused on understanding your health properly.</h2>
+
+              <p style="font-size: 1.05rem; line-height: 1.8;">When you visit as a new patient, your appointment begins with a thorough consultation and examination designed to understand your symptoms, medical history, lifestyle and movement patterns.</p>
+
+              <div style="height: 1px; background: var(--line); margin: 32px 0;"></div>
+
+              <div class="grid-2" style="gap: 22px; align-items: stretch;">
+                <div class="card" style="margin: 0; background: white; box-shadow: none;">
+                  <h3 style="margin-bottom: 14px;">Your consultation may include</h3>
+
+                  <div class="tick-list" style="grid-template-columns: 1fr; max-width: 100%; margin-top: 0;">
+                    <div class="tick-item">
+                      <div class="tick-icon">✓</div>
+                      <p>A detailed history of any problems or symptoms you may have.</p>
+                    </div>
+
+                    <div class="tick-item">
+                      <div class="tick-icon">✓</div>
+                      <p>Your medical history, lifestyle and hobbies.</p>
+                    </div>
+
+                    <div class="tick-item">
+                      <div class="tick-icon">✓</div>
+                      <p>An orthopaedic, neurological, muscular and skeletal examination where appropriate.</p>
+                    </div>
+
+                    <div class="tick-item">
+                      <div class="tick-icon">✓</div>
+                      <p>Assessment of muscles, joints and nerves, sometimes requiring a gown for examination.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card" style="margin: 0; background: white; box-shadow: none;">
+                  <h3 style="margin-bottom: 14px;">Report of findings</h3>
+
+                  <p>Your chiropractor will explain their professional opinion based on your examination findings and medical history.</p>
+
+                  <div class="tick-list" style="grid-template-columns: 1fr; max-width: 100%; margin-top: 18px;">
+                    <div class="tick-item">
+                      <div class="tick-icon">✓</div>
+                      <p>Working diagnosis and explanation of your condition.</p>
+                    </div>
+
+                    <div class="tick-item">
+                      <div class="tick-icon">✓</div>
+                      <p>Whether further imaging such as X-rays or MRI scans may be required.</p>
+                    </div>
+
+                    <div class="tick-item">
+                      <div class="tick-icon">✓</div>
+                      <p>The treatment techniques most suitable for your needs.</p>
+                    </div>
+
+                    <div class="tick-item">
+                      <div class="tick-icon">✓</div>
+                      <p>A clear plan for future treatment and ongoing care.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="height: 1px; background: var(--line); margin: 36px 0;"></div>
+
+              <div class="grid-2" style="gap: 22px; align-items: start;">
+                <div>
+                  <h3 style="margin-bottom: 14px;">Treatment and imaging</h3>
+                  <p>Treatment is often provided during the first appointment where appropriate. In some cases, further imaging may be recommended before treatment begins.</p>
+
+                  <p style="margin-top: 16px;">If clinically required, X-rays can be taken at the Enfield Chiropractic Clinic using the clinic’s digital X-ray machine. Chiropractors are trained in radiography and radiology, allowing them to both take and interpret X-rays.</p>
+                </div>
+
+                <div>
+                  <h3 style="margin-bottom: 14px;">Safe, personalised care</h3>
+                  <p>Chiropractic treatment is considered very safe in skilled hands because risk factors are identified before treatment begins, allowing techniques to be tailored to each individual.</p>
+
+                  <p style="margin-top: 16px;">Many patients experience immediate relief after treatment. Some people may feel temporary soreness in treated areas, though this usually settles quickly as the body adapts and improves.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article id="team" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="eyebrow">Meet the team</div>
+          <h1>Experienced chiropractors and supportive therapists.</h1>
+          <p class="lead">Choose a preferred chiropractor when requesting an appointment, or let the clinic match you with the right availability.</p>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="container">
+          <div class="conditions-panel">
+            <div class="conditions-header">
+              <div class="eyebrow">Main chiropractors</div>
+              <h2>Experienced, patient-focused chiropractic care.</h2>
+              <p style="margin-top: 16px;">The clinic’s chiropractors combine hands-on treatment with tailored advice to help patients move more comfortably and confidently.</p>
+            </div>
+
+            <div class="grid-3">
+              <article class="card" style="background: rgba(255,255,255,0.96); border-radius: 28px; text-align: left; grid-column: span 3; overflow: hidden; position: relative;">
+                <div style="position: absolute; inset: 0 auto 0 0; width: 7px; background: linear-gradient(180deg, #8f73ff, #c8b8ff);"></div>
+
+                <div style="display: grid; grid-template-columns: 120px 1fr; gap: 28px; align-items: start; padding-left: 12px;">
+                  <img src="https://enfield-chiro.co.uk/wp-content/uploads/2022/04/Hemi-1-768x960.jpg" alt="Dr Hemi Patel" style="width: 120px; height: 120px; object-fit: cover; object-position: center 18%; border-radius: 24px; border: 4px solid rgba(255,255,255,0.9); box-shadow: 0 14px 30px rgba(42,36,56,0.12);" />
+
+                  <div>
+                    <div class="eyebrow" style="margin-bottom: 12px;">Clinic Director · Doctor of Chiropractic</div>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Dr Hemi Patel</h3>
+                    <p style="margin-bottom: 18px; font-weight: 650;">Paediatric & pregnancy chiropractic specialist</p>
+
+                    <p>Dr Hemi Patel has over 20 years of clinical experience and is passionate about natural healthcare, prevention and helping patients better understand the connection between lifestyle and long-term wellbeing.</p>
+
+                    <p style="margin-top: 16px;">After completing a BSc Hons in Human Sciences and an MSc in Chiropractic at the Anglo-European College of Chiropractic in Bournemouth, Dr Patel received his Doctor of Chiropractic degree in 2000 following postgraduate clinical training.</p>
+
+                    <p style="margin-top: 16px;">Over the years he has continued extensive postgraduate education, particularly in paediatric and pregnancy chiropractic care. He has completed Cranial Therapy qualifications, a Masters in Chiropractic Paediatrics, Webster Technique certification and additional training in Spinning Babies techniques.</p>
+
+                    <div class="tick-list" style="margin-top: 24px; max-width: 100%;">
+                      <div class="tick-item">
+                        <div class="tick-icon">✓</div>
+                        <p>20+ years clinical experience</p>
+                      </div>
+
+                      <div class="tick-item">
+                        <div class="tick-icon">✓</div>
+                        <p>Masters in Chiropractic Paediatrics</p>
+                      </div>
+
+                      <div class="tick-item">
+                        <div class="tick-icon">✓</div>
+                        <p>Webster Technique certified</p>
+                      </div>
+
+                      <div class="tick-item">
+                        <div class="tick-icon">✓</div>
+                        <p>Cranial therapy qualified</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card" style="background: rgba(255,255,255,0.96); border-radius: 28px; text-align: left; grid-column: span 3; overflow: hidden; position: relative;">
+                <div style="position: absolute; inset: 0 auto 0 0; width: 7px; background: linear-gradient(180deg, #8f73ff, #c8b8ff);"></div>
+
+                <div style="display: grid; grid-template-columns: 120px 1fr; gap: 28px; align-items: start; padding-left: 12px;">
+                  <img src="https://enfield-chiro.co.uk/wp-content/uploads/2022/04/Erol-1-768x960.jpg" alt="Dr Erol Kavaz" style="width: 120px; height: 120px; object-fit: cover; object-position: center 18%; border-radius: 24px; border: 4px solid rgba(255,255,255,0.9); box-shadow: 0 14px 30px rgba(42,36,56,0.12);" />
+
+                  <div>
+                    <div class="eyebrow" style="margin-bottom: 12px;">Doctor of Chiropractic</div>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Dr Erol Kavaz</h3>
+                    <p style="margin-bottom: 18px; font-weight: 650;">Welsh Institute of Chiropractic graduate</p>
+
+                    <p>Originally from Cyprus, Dr Erol Kavaz is passionate about helping patients achieve the highest level of movement, function and overall wellbeing possible through chiropractic care.</p>
+
+                    <p style="margin-top: 16px;">He believes chiropractic is a hidden treasure that can unlock the body’s extraordinary capabilities by restoring movement and supporting the nervous system to function at its most optimal level.</p>
+
+                    <p style="margin-top: 16px;">Being bilingual and working in a multicultural area like Enfield allows him to connect naturally with patients from a wide range of backgrounds and communities.</p>
+
+                    <div class="tick-list" style="margin-top: 24px; max-width: 100%;">
+                      <div class="tick-item">
+                        <div class="tick-icon">✓</div>
+                        <p>Welsh Institute of Chiropractic graduate</p>
+                      </div>
+
+                      <div class="tick-item">
+                        <div class="tick-icon">✓</div>
+                        <p>Passionate about restoring movement and function</p>
+                      </div>
+
+                      <div class="tick-item">
+                        <div class="tick-icon">✓</div>
+                        <p>Bilingual practitioner</p>
+                      </div>
+
+                      <div class="tick-item">
+                        <div class="tick-icon">✓</div>
+                        <p>Interested in sports and music</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card" style="background: rgba(255,255,255,0.96); border-radius: 28px; text-align: left; grid-column: span 3; overflow: hidden; position: relative;">
+                <div style="position: absolute; inset: 0 auto 0 0; width: 7px; background: linear-gradient(180deg, #8f73ff, #c8b8ff);"></div>
+
+                <div style="display: grid; grid-template-columns: 120px 1fr; gap: 28px; align-items: start; padding-left: 12px;">
+                  <img src="https://enfield-chiro.co.uk/wp-content/uploads/2022/04/Angelina-1-768x960.jpg" alt="Dr Angelina Lim Wan Hua" style="width: 120px; height: 120px; object-fit: cover; object-position: center 18%; border-radius: 24px; border: 4px solid rgba(255,255,255,0.9); box-shadow: 0 14px 30px rgba(42,36,56,0.12);" />
+
+                  <div>
+                    <div class="eyebrow" style="margin-bottom: 12px;">Doctor of Chiropractic</div>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Dr Angelina Lim Wan Hua</h3>
+                    <p style="margin-bottom: 18px; font-weight: 650;">GCC & UCA registered · Pregnancy, paediatric and cranial techniques</p>
+
+                    <p>Dr Angelina Lim Wan Hua studied a Master of Chiropractic at the University of South Wales, graduating with Distinction. She is registered with the General Chiropractic Council and the United Chiropractic Association.</p>
+
+                    <p style="margin-top: 16px;">Her interest in the human body began in childhood, especially the structure of the spine and how the brain communicates with the rest of the body through it. Discovering chiropractic sparked her passion for helping people in need as a career.</p>
+
+                    <p style="margin-top: 16px;">Born and raised in Malaysia, Dr Angelina is fluent in English and Mandarin, with additional knowledge of Cantonese, Malay and Hokkien. Her training includes Diversified Technique, Sacro-occipital Technique, Cranial Adjustment, CMRT, Dry Needling and Webster Technique.</p>
+
+                    <div class="tick-list" style="margin-top: 24px; max-width: 100%;">
+                      <div class="tick-item">
+                        <div class="tick-icon">✓</div>
+                        <p>Master of Chiropractic with Distinction</p>
+                      </div>
+
+                      <div class="tick-item">
+                        <div class="tick-icon">✓</div>
+                        <p>GCC and UCA registered</p>
+                      </div>
+
+                      <div class="tick-item">
+                        <div class="tick-icon">✓</div>
+                        <p>Webster Technique certified</p>
+                      </div>
+
+                      <div class="tick-item">
+                        <div class="tick-icon">✓</div>
+                        <p>Trained in cranial work, CMRT and dry needling</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article id="prices" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="eyebrow">Fees and opening hours</div>
+          <h1>Clear pricing and flexible appointment times.</h1>
+          <p class="lead">Emergency appointments may be added to opening hours when needed and when chiropractors are available.</p>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="container equal-height-grid">
+          <div class="card equal-card">
+            <h2>Prices</h2>
+            <div class="price-list" style="margin-top: 18px;">
+              <div class="price-row"><strong>New patient consultation</strong><span>£79</span></div>
+              <div class="price-row"><strong>Follow-up chiropractic treatment</strong><span>£49</span></div>
+              <div class="price-row"><strong>Cranial consultation</strong><span>£79</span></div>
+              <div class="price-row"><strong>Follow-up cranial treatment</strong><span>£59</span></div>
+            </div>
+          </div>
+
+          <div class="card equal-card">
+            <h2>Opening hours</h2>
+            <div class="hours-list" style="margin-top: 18px;">
+              <div class="hours-row"><strong>Monday</strong><span>7:15am to 8:00pm</span></div>
+              <div class="hours-row"><strong>Tuesday</strong><span>7:15am to 8:00pm</span></div>
+              <div class="hours-row"><strong>Wednesday</strong><span>7:15am to 1:00pm / 2:30pm to 8:00pm</span></div>
+              <div class="hours-row"><strong>Thursday</strong><span>7:15am to 8:00pm</span></div>
+              <div class="hours-row"><strong>Friday</strong><span>7:15am to 8:00pm</span></div>
+              <div class="hours-row"><strong>Saturday</strong><span>7:45am to 1:30pm</span></div>
+              <div class="hours-row"><strong>Sunday</strong><span>Closed</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article id="contact" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="eyebrow">Book now</div>
+          <h1>Request an appointment.</h1>
+          <p class="lead">Send your details and the clinic will contact you to confirm availability. Prefer speaking to someone? Call 020 8360 0204.</p>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="container content-grid">
+          <div class="contact-panel">
+            <h2>Find us</h2>
+            <p style="margin-top: 16px;">Enfield Chiropractic Clinic<br>94 Ridge Avenue<br>Winchmore Hill<br>London N21 2AU</p>
+            <p style="margin-top: 16px;">Bus routes 329 and W8 stop within a few yards of the clinic entrance. Free parking is available on Berkley Gardens, subject to restrictions.</p>
+            <p style="margin-top: 20px;"><strong>Phone:</strong> <a href="tel:02083600204">020 8360 0204</a><br><strong>Email:</strong> <a href="mailto:info@enfield-chiro.co.uk">info@enfield-chiro.co.uk</a></p>
+          </div>
+
+          <form class="card" aria-label="Appointment request form">
+            <div class="form-row">
+              <input type="text" name="first-name" placeholder="First name" required />
+              <input type="text" name="last-name" placeholder="Last name" required />
+            </div>
+            <div class="form-row">
+              <input type="tel" name="phone" placeholder="Phone" required />
+              <input type="email" name="email" placeholder="Email" required />
+            </div>
+            <select name="new-patient" required>
+              <option value="">Are you a new patient?</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+            <select name="preferred-chiropractor">
+              <option value="">Preferred chiropractor</option>
+              <option>Dr Hemi Patel</option>
+              <option>Dr Erol Kavaz</option>
+              <option>Dr Angelina Lim Wan Hua</option>
+              <option>Dr Kyri Christodoulou</option>
+              <option>Dr Kai Jing Lee</option>
+            </select>
+            <input type="date" name="preferred-date" />
+            <select name="confirm-by">
+              <option>Email</option>
+              <option>Telephone</option>
+            </select>
+            <textarea name="message" placeholder="Tell us briefly what you need help with"></textarea>
+            <button class="btn" type="submit">Send request</button>
+            <p style="font-size: 0.9rem;">This demo form needs connecting to your booking/email system before going live.</p>
+          </form>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3 style="margin-bottom: 14px;">Enfield Chiropractic Clinic</h3>
+        <p>Natural spine and joint healthcare in Winchmore Hill, Enfield.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p><a href="tel:02083600204">020 8360 0204</a><br><a href="mailto:info@enfield-chiro.co.uk">info@enfield-chiro.co.uk</a></p>
+      </div>
+      <div>
+        <h3>Address</h3>
+        <p>94 Ridge Avenue<br>Winchmore Hill<br>London N21 2AU</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.animate([
+            { opacity: 0, transform: 'translateY(24px)' },
+            { opacity: 1, transform: 'translateY(0px)' }
+          ], {
+            duration: 700,
+            easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+            fill: 'forwards'
+          });
+
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.card, .pill, .home-feature, .trust-item, .tick-item, .conditions-panel').forEach(el => {
+      el.style.opacity = '0';
+      observer.observe(el);
+    });
+
+
+    const pages = document.querySelectorAll('.page');
+    const links = document.querySelectorAll('[data-page-link]');
+
+    function showPage(pageId) {
+      const targetId = pageId || 'home';
+
+      pages.forEach(page => {
+        page.classList.toggle('active', page.id === targetId);
+      });
+
+      links.forEach(link => {
+        link.classList.toggle('active', link.dataset.pageLink === targetId);
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    links.forEach(link => {
+      link.addEventListener('click', event => {
+        const pageId = link.dataset.pageLink;
+        if (!pageId) return;
+        event.preventDefault();
+        history.pushState(null, '', `#${pageId}`);
+        showPage(pageId);
+      });
+    });
+
+    window.addEventListener('popstate', () => {
+      showPage(location.hash.replace('#', '') || 'home');
+    });
+
+    showPage(location.hash.replace('#', '') || 'home');
+  </script>
+</body>
+</html>
