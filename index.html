@@ -58,17 +58,34 @@
     }
 
     .topbar {
-      background: var(--ink);
-      color: #eefaf8;
+      background: linear-gradient(135deg, #241f33 0%, #342852 100%);
+      color: #f5f2ff;
       font-size: 0.9rem;
       padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     .topbar .container {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 18px;
       flex-wrap: wrap;
+    }
+
+    .topbar span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 1.4;
+    }
+
+    .topbar a {
+      transition: opacity 0.2s ease;
+    }
+
+    .topbar a:hover {
+      opacity: 0.78;
     }
 
     header {
@@ -103,6 +120,19 @@
       height: auto;
       object-fit: contain;
       display: block;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--ink);
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(20,39,47,0.05);
     }
 
     .nav-links {
@@ -625,22 +655,160 @@
     }
 
     @media (max-width: 980px) {
-      .nav-links { display: none; }
-      .hero-grid, .content-grid, .grid-2, .grid-3, .footer-grid, .home-about-panel, .equal-height-grid { grid-template-columns: 1fr; }
+      .mobile-menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 20px;
+        right: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px;
+        border-radius: 24px;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 22px 50px rgba(42,36,56,0.12);
+        border: 1px solid var(--line);
+        z-index: 50;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 14px;
+      }
+
+      .hero-grid, .content-grid, .grid-2, .grid-3, .footer-grid, .home-about-panel, .equal-height-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #contact .content-grid {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
       .section-intro { position: static; }
       .trust-row { grid-template-columns: repeat(2, 1fr); }
       .home-feature-grid { grid-template-columns: 1fr; }
     }
 
+    @media (max-width: 760px) {
+      #team .card[style*="grid-column: span 3"] > div:last-child {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+        padding-left: 0 !important;
+      }
+
+      #team .card img {
+        width: 100% !important;
+        max-width: 180px;
+        height: 180px !important;
+        margin: 0 auto;
+        display: block;
+      }
+
+      #team .card {
+        padding: 22px !important;
+      }
+
+      #team h3 {
+        font-size: 1.45rem !important;
+      }
+
+      #team .eyebrow {
+        font-size: 0.76rem;
+      }
+
+      #team .tick-list {
+        grid-template-columns: 1fr !important;
+      }
+
+      #team .tick-item {
+        min-height: unset;
+      }
+    }
+
     @media (max-width: 620px) {
       .container { width: min(100% - 28px, 1120px); }
+
+      .topbar {
+        padding: 10px 0;
+      }
+
+      .topbar .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 6px;
+      }
+
+      .topbar span {
+        font-size: 0.78rem;
+        line-height: 1.4;
+        opacity: 0.95;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .topbar span:first-child::before {
+        content: '📍';
+        font-size: 0.78rem;
+      }
+
+      .topbar span:last-child::before {
+        content: '✆';
+        font-size: 0.78rem;
+      }
       .page-hero { padding: 48px 0 32px; }
       .hero-image { min-height: 320px; }
       .trust-row, .pill-grid, .form-row, .tick-list { grid-template-columns: 1fr; }
       .topbar .container { display: grid; }
-      .logo span:last-child { white-space: normal; font-size: 0.98rem; line-height: 1.1; }
-      .btn { width: 100%; }
-      nav { align-items: flex-start; }
+      .logo span:last-child {
+        white-space: normal;
+        font-size: 0.92rem;
+        line-height: 1.1;
+      }
+
+      nav {
+        grid-template-columns: 1fr auto auto;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 0;
+      }
+
+      .logo {
+        min-width: 0;
+        gap: 2px;
+      }
+
+      .logo-mark {
+        width: 64px;
+      }
+
+      .mobile-menu-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        flex-shrink: 0;
+      }
+
+      .btn {
+        width: auto;
+        padding: 11px 18px;
+        font-size: 0.92rem;
+        flex-shrink: 0;
+      }
     }
   </style>
 </head>
@@ -659,6 +827,8 @@
           <img class="logo-mark" src="https://i.postimg.cc/sg2PBZMK/Untitled-design-(32).png" alt="Enfield Chiropractic Clinic logo" />
           <span>Enfield Chiropractic Clinic</span>
         </a>
+
+        <button class="mobile-menu-btn" aria-label="Open navigation menu">☰</button>
 
         <div class="nav-links">
           <a href="#home" data-page-link="home">Home</a>
@@ -1236,6 +1406,13 @@
     });
 
 
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuBtn?.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
     const pages = document.querySelectorAll('.page');
     const links = document.querySelectorAll('[data-page-link]');
 
@@ -1260,6 +1437,7 @@
         event.preventDefault();
         history.pushState(null, '', `#${pageId}`);
         showPage(pageId);
+        navLinks.classList.remove('open');
       });
     });
 
